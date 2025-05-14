@@ -1,14 +1,3 @@
-# Python
-venv/
-*.pyc
-__pycache__/
-*.sqlite3
-.env
-
-# Node
-node_modules/
-dist/
-
 # Logs
 logs
 *.log
