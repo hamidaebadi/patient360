@@ -6,7 +6,7 @@ The **Healthcare Personnel Monitoring** component is designed to enhance the eff
 - **Ensure Quality Interactions**: Promote meaningful and high-quality interactions between healthcare personnel and patients.
 - **Provide Actionable Insights**: Equip team leaders and supervisors with valuable data and insights to guide their teams effectively.
 
-# Healthcare Personnel Monitoring Component: User Requirements
+## Healthcare Personnel Monitoring Component: User Requirements
 
 The **Healthcare Personnel Monitoring Component** is designed to meet the needs of team leaders and supervisors responsible for overseeing healthcare personnel. Below is a detailed breakdown of the functional and non-functional requirements to ensure effective monitoring and management.
 

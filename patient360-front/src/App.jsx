@@ -1,6 +1,6 @@
 import {Routes, Route, Link} from 'react-router-dom'
-import Staff from './views/Staff'
-import Landing from './views/Landing'
+import Staff from './apps/Staff'
+import Landing from './apps/Landing'
 
 const App = () =>{
   return(
