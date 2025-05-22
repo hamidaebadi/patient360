@@ -1,66 +1,48 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Sidebar = () => {
-    return(
-        <div className="fixed top-0 left-0 
-        h-screen w-[250px] bg-white border-r border-gray-600 flex flex-col p-4">
-             {/* Logo Section */}
-          <div className="flex justify-center basis-1/10">
-            <h3 className="font-serif font-bold uppercase text-shadow-lg">Patient360</h3>
+const Sidebar = ({menuItmes}) => {
+
+      return (
+        <div className="fixed top-0 left-0 h-screen w-[20%] bg-gray-900 text-gray-300 flex flex-col p-4">
+          {/* Logo Section */}
+          <div className="flex justify-center">
+            <h4 className="font-extrabold uppercase">
+              Healthcare Personnel Monitoring
+            </h4>
           </div>
 
-           {/* User Info and Logout Section */}
-          <div className="flex items-center justify-between basis-1/8">
-            <div>
-              <p className="text-sm font-semibold text-gray-800">Antoni Hakkara</p>
-              <p className="text-xs text-gray-500">CEO</p>
-            </div>
-            <NavLink
-              to="/logout"
-              className="bg-gray-500 text-white text-xs px-2 py-1 rounded hover:bg-gray-600"
-            >
-              Logout
-            </NavLink>
-          </div>
-
-
-          {/* Navigation Links as Buttons */}
+          {/* Navigation Links */}
           <nav className="flex flex-col space-y-2">
-            <NavLink
+            {menuItmes.map((item) => 
+            <div key={item.id}>
+              <div className="text-xs uppercase text-gray-500 mb-2">
+                {item.headerText}</div>
+
+                {item.linkTexts.map((link) =>
+                 <NavLink
+                 key={link}
               to="/"
               className={({ isActive }) =>
-                `block text-center py-2 px-4 rounded text-gray-700 border border-gray-300 hover:bg-blue-500 hover:text-white ${
-                  isActive ? 'bg-blue-500 text-white border-blue-500' : ''
+                `flex items-center py-2 px-3 rounded text-gray-300 hover:bg-gray-700 hover:text-white ${
+                  isActive ? 'bg-blue-600 text-white' : ''
                 }`
               }
             >
-              Dashboard
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7m-9-5v12m9-12l2 2m-2-2l-7 7-7-7" />
+              </svg>
+              {link}
             </NavLink>
-            <NavLink
-              to="/add-user"
-              className={({ isActive }) =>
-                `block text-center py-2 px-4 rounded text-gray-700 border border-gray-300 hover:bg-blue-500 hover:text-white ${
-                  isActive ? 'bg-blue-500 text-white border-blue-500' : ''
-                }`
-              }
-            >
-              Add User
-            </NavLink>
-            <NavLink
-              to="/add-patient"
-              className={({ isActive }) =>
-                `block text-center py-2 px-4 rounded text-gray-700 border border-gray-300 hover:bg-blue-500 hover:text-white ${
-                  isActive ? 'bg-blue-500 text-white border-blue-500' : ''
-                }`
-              }
-            >
-              Add Patient
-            </NavLink>
+                )}
+           
+            </div>
+            )}
+            {/* Overview Section */}
+            
           </nav>
-
-          
         </div>
+ 
     )
 }
 
