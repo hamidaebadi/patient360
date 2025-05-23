@@ -1,35 +1,51 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
 import Sidebar from "../../components/Sidebar";
+import { Outlet } from "react-router-dom";
 
 const PatientMonitor = () => {
     const title = "Patient Monitoring"
-    const menuItems = [{
+    const menuObj = [{
         id: 1,
         headerText: "General",
-        linkTexts: ['Dashboard', 'Alamrs']
+        links: [
+            {text: 'Dashboard', url:'dashboard'},
+            {text: 'Alarms', url:'alarms'}
+        ]
     },
     {
         id:2,
         headerText: "Monitoring",
-        linkTexts: ['Under Controls', 'Expert Analysis','Add New']
+        links: [
+            {text: 'Active Patients', url:'active_patients'},
+            {text: 'Health Trends', url:'health_trends'},
+            {text: 'Critical Alerts', url:'critical_alerts'},
+            {text: 'Medication Adherence', url:'medication_adherence'},
+            {text: 'Symptom Tracker', url:'symptom_tracker'},
+            {text: 'Patient Summaries', url: 'patient_summaries'}
+        ]
     },
     {
         id:3,
         headerText: "Personal Treatment Plans",
-        linkTexts: ['All plans', 'Creat New']
+        links: [
+            {text: 'All plans', url: 'all_plans'},
+        ]
     },
     {
         id:4,
         headerText: "Settings",
-        linkTexts: ['My Profile', 'Data & Privacy']
+        links: [
+            {text: 'My Profile', url:'profile'},
+            {text: 'Data & Privacy', url: 'data_privacy'}
+        ]
     },
 ]
     return(
         <>
         <div className="flex">
             
-            <Sidebar menuItmes={menuItems} title={title}/>
+            <Sidebar menuObj={menuObj} title={title}/>
         
             <div className="ml-[20%] w-[calc(100%-20%)] min-h-screen bg-gray-50">
             {/* Navbar fixed at the top of the content area */}
@@ -38,7 +54,7 @@ const PatientMonitor = () => {
             </div>
             {/* Main content with margin-top to account for navbar height */}
             <div className="mt-[56px] p-6">
-              Main View
+              <Outlet />
             </div>
           </div>
         </div>

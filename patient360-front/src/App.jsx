@@ -3,6 +3,7 @@ import Staff from './apps/Staff'
 import Landing from './apps/Landing'
 import PersonnelMonitor from './apps/personnelMonitor/main'
 import PatientMonitor from './apps/patientMonitor/main'
+import ActivePatient from './apps/patientMonitor/ActivePatient'
 
 const App = () =>{
   return(
@@ -10,7 +11,9 @@ const App = () =>{
       <Routes>
         <Route path='/staff' element={<Staff />} />
         <Route path='/hpm' element={<PersonnelMonitor />}/>
-        <Route path='/patient_monitor' element={<PatientMonitor />}/>
+        <Route path='/patient_monitor' element={<PatientMonitor />}>
+          <Route path='active_patients' element={<ActivePatient />}/>
+        </Route >
         <Route path='/' element={<Landing />} />
       </Routes>
     </div>
