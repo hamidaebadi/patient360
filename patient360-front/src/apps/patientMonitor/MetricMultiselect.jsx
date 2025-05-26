@@ -57,15 +57,15 @@ const customStyles = {
   }),
   multiValue: (base) => ({
     ...base,
-    backgroundColor: "#e0f2fe", // blue-100
-    color: "#0369a1", // blue-700
+    backgroundColor: "#1f2937", // gray-800
+    color: "#FFFFFF", // white
     borderRadius: "0.375rem",
-    padding: "0 0.25rem",
+    padding: "0.3rem",
     fontSize: "1.2rem",
   }),
   multiValueLabel: (base) => ({
     ...base,
-    color: "#0369a1", // blue-700
+    color: "#FFFFFF", // blue-700
   }),
   multiValueRemove: (base) => ({
     ...base,
@@ -89,6 +89,11 @@ const customStyles = {
     padding: "0.25rem 0.75rem",
     color: "#6b7280", // gray-500
   }),
+
+  input:(base) => ({
+    ...base,
+    color:"white"
+  })
 };
 
 
