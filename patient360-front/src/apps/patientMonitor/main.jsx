@@ -19,8 +19,6 @@ const PatientMonitor = () => {
         links: [
             {text: 'Active Patients', url:'active_patients'},
             {text: 'Health Trends', url:'health_trends'},
-            {text: 'Critical Alerts', url:'critical_alerts'},
-            {text: 'Medication Adherence', url:'medication_adherence'},
             {text: 'Symptom Tracker', url:'symptom_tracker'},
             {text: 'Patient Summaries', url: 'patient_summaries'}
         ]

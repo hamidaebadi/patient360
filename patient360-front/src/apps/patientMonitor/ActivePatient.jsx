@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import PatientCard from "./PatientCard";
+import PatientCard from "./components/PatientCard";
 
 const ActivePatient = () => {
 
