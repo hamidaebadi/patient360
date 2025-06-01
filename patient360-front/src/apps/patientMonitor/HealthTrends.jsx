@@ -121,11 +121,56 @@ const HealthTrends = () => {
       { time: '23:00', bpm: 68 },
         ]
 
+    const bloodPressureData = [
+  {
+    "timestamp": "2025-05-18T08:00:00Z",
+    "systolic": 128,
+    "diastolic": 71
+  },
+ 
+  {
+    "timestamp": "2025-05-19T08:00:00Z",
+    "systolic": 114,
+    "diastolic": 80
+  },
+ 
+  {
+    "timestamp": "2025-05-20T08:00:00Z",
+    "systolic": 117,
+    "diastolic": 80
+  },
+ 
+  {
+    "timestamp": "2025-05-21T08:00:00Z",
+    "systolic": 115,
+    "diastolic": 89
+  },
+
+  {
+    "timestamp": "2025-05-22T08:00:00Z",
+    "systolic": 130,
+    "diastolic": 71
+  },
+
+  {
+    "timestamp": "2025-05-23T08:00:00Z",
+    "systolic": 138,
+    "diastolic": 88
+  },
+
+  {
+    "timestamp": "2025-05-24T08:00:00Z",
+    "systolic": 115,
+    "diastolic": 86
+  },
+
+]
 
     return(
         <>
-            <div className="flex md:flex-col">
-                <div className="flex md:flex-col">
+            <div className="flex md:flex-col content-evenly">
+                <div className="flex md:flex-col 
+                ">
                    <PatientSelect
                    patientOptions={mockPatients}
                    selectedPatient={selectedPatient}
@@ -142,6 +187,7 @@ const HealthTrends = () => {
                     {
                         selectedPatient === null &&
                         <div>No patient Selected</div>
+                        
                     }
 
                     {
@@ -150,7 +196,7 @@ const HealthTrends = () => {
                         selectedMetrics.map(
                             metric => <HealthTrendCharts 
                             metric_type={metric.value} 
-                            data={heartRateData}/>)
+                            data={bloodPressureData}/>)
                         :
                         <div>Choose at least one patient and one chart</div>
                     }

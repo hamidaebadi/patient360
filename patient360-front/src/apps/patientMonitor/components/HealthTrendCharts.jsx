@@ -1,5 +1,6 @@
 import React from "react";
 import HeartRateChart from "./HeartRateChart";
+import BloodPressureChart from "./BloodPressureChart";
 
 const HealthTrendCharts = ({metric_type, data}) => {
 
@@ -8,6 +9,13 @@ const HealthTrendCharts = ({metric_type, data}) => {
             return(
                 <>
                 <HeartRateChart data={data}/>
+                </>
+            )
+
+        case "blood_pressure":
+            return(
+                <>
+                <BloodPressureChart data={data}/>
                 </>
             )
     

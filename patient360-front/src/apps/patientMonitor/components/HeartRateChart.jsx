@@ -9,8 +9,6 @@ import {
     Title,
     Tooltip,
     Legend,
-    plugins,
-    scales,
 } from 'chart.js'
 
 ChartJS.register(
@@ -34,9 +32,9 @@ const HeartRateChart = ({data}) => {
                 borderColor: 'rgb(75, 192, 192)',
                 backgroundColor: 'rgba(75, 192, 192, 0.1)',
                 fill: true,
-                tension: 0.4,
-                pointRadius: 4,
-                pointHoverRadius: 6,
+                tension: 0.3,
+                pointRadius: 6,
+                pointHoverRadius: 10,
             }
         ]
     }
