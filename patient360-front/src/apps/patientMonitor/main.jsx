@@ -17,10 +17,7 @@ const PatientMonitor = () => {
         id:2,
         headerText: "Monitoring",
         links: [
-            {text: 'Active Patients', url:'active_patients'},
-            {text: 'Health Trends', url:'health_trends'},
-            {text: 'Symptom Tracker', url:'symptom_tracker'},
-            {text: 'Patient Summaries', url: 'patient_summaries'}
+            {text: 'Patients', url:'patient_list'},
         ]
     },
     {
@@ -41,15 +38,11 @@ const PatientMonitor = () => {
 ]
     return(
         <>
+        <Navbar />
+        <Sidebar menuObj={menuObj} title={title}/>
         <div className="flex">
-            
-            <Sidebar menuObj={menuObj} title={title}/>
-        
-            <div className="ml-[20%] w-[calc(100%-20%)] min-h-screen bg-gray-50">
+            <div className="ml-[15%] w-[calc(100%-15%)] min-h-screen bg-gray-50">
             {/* Navbar fixed at the top of the content area */}
-            <div className="fixed top-0 left-[20%] w-[calc(100%-20%)] z-10">
-              <Navbar />
-            </div>
             {/* Main content with margin-top to account for navbar height */}
             <div className="mt-[56px] p-6">
               <Outlet />
